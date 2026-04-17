@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naila Shaheen - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-bg: #f4f4f4;
+            --sidebar-bg: #e0e0e0;
+            --text-main: #333;
+            --accent-color: #5b7578;
+            --white: #ffffff;
+            --border-color: #ccc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Header Styles */
+        header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            border-bottom: 25px solid var(--accent-color);
+            padding: 20px 0;
+        }
+
+        .logo-box {
+            background: #d3d3d3;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 40px;
+        }
+
+        .logo-box span {
+            font-size: 48px;
+            font-weight: bold;
+            color: #666;
+        }
+
+        .header-text {
+            flex-grow: 1;
+        }
+
+        .header-text h1 {
+            font-size: 42px;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        .sub-header {
+            width: 100%;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 30%;
+            background-color: var(--sidebar-bg);
+            padding: 40px 30px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-section h2 {
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #aaa;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            width: 25px;
+            color: #444;
+        }
+
+        .list-items {
+            list-style: none;
+        }
+
+        .list-items li {
+            margin-bottom: 8px;
+            font-size: 14px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .list-items li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .education-year {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            width: 70%;
+            padding: 40px;
+            background: white;
+        }
+
+        .content-section {
+            margin-bottom: 35px;
+        }
+
+        .content-section h2 {
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .profile-text {
+            font-size: 14px;
+            text-align: justify;
+            color: #555;
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .exp-title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .exp-date {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #777;
+        }
+
+        .exp-sub {
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .exp-details {
+            list-style: disc;
+            margin-left: 15px;
+            font-size: 13px;
+            color: #444;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .cert-item h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cert-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .cert-label {
+            font-weight: bold;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar, .main-content {
+                width: 100%;
+            }
+            .logo-box {
+                width: 100px;
+                height: 80px;
+                margin-right: 20px;
+            }
+            .header-text h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo-box">
+                <span>NS</span>
+            </div>
+            <div class="header-text">
+                <h1>NAILA SHAHEEN</h1>
+            </div>
+        </header>
+        
+        <div class="sub-header">
+            COMPUTER SCIENCE STUDENT
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>CONTACT</h2>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i> 03359446353
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i> shaheennaila339@gmail.com
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>EDUCATION</h2>
+                <span class="education-year">2019-2021<br>2021-2023</span>
+                <ul class="list-items">
+                    <li>Matric</li>
+                    <li>Intermediate</li>
+                </ul>
+
+                <span class="education-year">2024-2028</span>
+                <p style="font-size: 12px; font-weight: bold;">FATIMA JINNAH UNIVERSITY</p>
+                <ul class="list-items">
+                    <li>Bachelor of Computer Science</li>
+                    <li>Ongoing</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>SKILLS</h2>
+                <ul class="list-items">
+                    <li>Project Management</li>
+                    <li>Public Relations</li>
+                    <li>Teamwork</li>
+                    <li>Time Management</li>
+                    <li>Leadership</li>
+                    <li>Effective Communication</li>
+                    <li>Critical Thinking</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h2>LANGUAGES</h2>
+                <ul class="list-items">
+                    <li>English (Professional)</li>
+                    <li>Urdu (Fluent)</li>
+                    <li>Punjabi (Native)</li>
+                    <li>Programming (C++, x86 Assembly, python, prolog)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <section class="content-section">
+                <h2>PROFILE</h2>
+                <p class="profile-text">
+                    "I Dedicated Computer Science student with a strong foundation in low-level systems and high-level programming. 
+                    Proficient in x86 Assembly, C, and Python, with a growing focus on Generative and Agentic AI. 
+                    Passionate about bridging complex system logic with innovative AI solutions to build efficient, scalable technology."
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>WORK EXPERIENCE</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Heart Rate Monitor (DLD Project)</span>
+                        <span class="exp-date">MARCH 2025 &ndash; JULY 2025</span>
+                    </div>
+                    <span class="exp-sub">Arduino & Hardware Integration</span>
+                    <ul class="exp-details">
+                        <li>Designed and implemented a real-time heart rate monitoring system using Arduino Uno and Pulse Sensors.</li>
+                        <li>Developed a signal processing algorithm to ensure accurate BPM (Beats Per Minute) readings on an LCD display.</li>
+                        <li>Optimized hardware connections and logic gates to minimize noise and improve data reliability.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Binary Calculator (COAL Project)</span>
+                        <span class="exp-date">Sep 2025 &ndash; Jan 2026</span>
+                    </div>
+                    <span class="exp-sub">x86 Assembly Programming</span>
+                    <ul class="exp-details">
+                        <li>Developed a functional binary arithmetic calculator using x86 Assembly language.</li>
+                        <li>Managed CPU registers and bitwise operations for efficient memory and data processing.</li>
+                        <li>Implemented system interrupts to process user inputs and display real-time binary results.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <span class="exp-title">Hangman game (OOP Project)</span>
+                        <span class="exp-date">March 2025 &ndash; July 2025</span>
+                    </div>
+                    <span class="exp-sub">C++ Development</span>
+                    <ul class="exp-details">
+                        <li>Built a console-based game applying core Object-Oriented Programming principles like Classes and Encapsulation.</li>
+                        <li>Integrated File Handling to store, read, and manage a dynamic library of secret words.</li>
+                        <li>Developed modular game logic for turn-based interaction, score tracking, and real-time status updates.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>CERTIFICATIONS</h2>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <h3>Freelancing Specialization</h3>
+                        <p style="font-size: 13px; margin-bottom: 5px;">DigiSkills Training Program</p>
+                        <div class="cert-row"><span class="cert-label">Platforms</span> <span>Upwork & Fiverr</span></div>
+                        <div class="cert-row"><span class="cert-label">Client Relations</span> <span>Project Bidding</span></div>
+                    </div>
+                    <div class="cert-item">
+                        <h3>Creative Writing</h3>
+                        <p style="font-size: 13px; margin-bottom: 5px;">Workshop & Certification</p>
+                        <div class="cert-row"><span class="cert-label">Copywriting</span> <span>Content Strategy</span></div>
+                        <div class="cert-row"><span class="cert-label">Storytelling</span> <span>Digital Copywriting</span></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
